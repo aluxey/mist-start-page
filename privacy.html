@@ -1,56 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mist Start Page — Privacy Policy</title>
-  </head>
-  <body>
-    <main>
-      <h1>Mist Start Page — Privacy Policy</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Mist Minimal New Tab</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 680px; margin: 48px auto; padding: 0 24px; line-height: 1.6; color: #333; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+    p { margin: 0.5rem 0; }
+    code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    a { color: #2563eb; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p><em>Last updated: July 22, 2026</em></p>
+  <p><strong>Mist — Minimal New Tab</strong> does not sell personal data or use analytics. Preferences stay in your browser. Weather and favicon requests are sent directly from your browser to the third-party services described below. The optional feedback form uses a developer-operated Netlify function only after you choose to submit feedback.</p>
 
-      <p>
-        Mist Start Page is a Chrome extension that replaces the Chrome New Tab
-        page with a minimal, customizable start page.
-      </p>
+  <h2>Local storage</h2>
+  <p>Your preferences (theme, shortcuts, groups, name, etc.) are stored locally in your browser via <code>localStorage</code>. Mist does not upload these preferences to the developer. Shortcut domains are sent only to the favicon service described below, and a configuration leaves your device only when you choose to export it.</p>
+  <p>Mist also stores the dates on which it was opened, the number of theme changes, and review-prompt choices locally. These counters are used only to avoid asking for a Chrome Web Store review too early or too often. They are never sent to the developer or an analytics service.</p>
 
-      <h2>Data stored locally</h2>
-      <p>Mist stores the following data locally in the user's browser:</p>
-      <ul>
-        <li>User display name</li>
-        <li>Theme preference</li>
-        <li>Shortcut groups and links</li>
-        <li>Visibility preferences</li>
-        <li>Local backup and restore preferences</li>
-      </ul>
-      <p>This data stays on the user's device and is not sent to the developer.</p>
+  <h2>Weather (optional)</h2>
+  <p>Weather is an optional feature. You can enter a city or postal code, or let Mist estimate your approximate city from your IP address. Mist does not request precise browser location permission. The selected or approximate location is used solely to retrieve weather data from the following third-party services:</p>
+  <ul>
+    <li><a href="https://www.geojs.io/" target="_blank" rel="noopener noreferrer">GeoJS</a> — primary approximate IP-based location</li>
+    <li><a href="https://ipapi.co/" target="_blank" rel="noopener noreferrer">ipapi</a> — fallback approximate IP-based location</li>
+    <li><a href="https://geocoding-api.open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo Geocoding API</a> — city/postal-code lookup when you enter a location</li>
+    <li><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo Weather API</a> — weather conditions for the selected or approximate coordinates</li>
+  </ul>
+  <p>Like any web request, a provider you use receives normal connection information, including your IP address. Mist itself never stores your IP address. A manually entered location and its coordinates remain in local preferences until you change them or clear Mist's data. An automatically estimated city and coordinates are treated as current for six hours. Weather is treated as current for 30 minutes and can be reused for up to 12 hours as an offline fallback. Cached weather data is removed when you disable the feature.</p>
+  <p>Before the first weather request, Mist presents a one-time disclosure and asks you to enable the feature. You can decline or disable weather at any time in Settings &gt; General.</p>
+  <p>Chrome may also show a one-time host-access confirmation. A manually entered location requests access only to Open-Meteo; automatic location also requests access to GeoJS and ipapi. These optional permissions are requested only after you choose to use weather.</p>
 
-      <h2>Search</h2>
-      <p>
-        Mist uses the Chrome Search API to perform searches from the New Tab
-        search bar with the user's default Chrome search provider.
-      </p>
-      <p>
-        Mist does not change, replace, or override the user's default search
-        engine.
-      </p>
+  <h2>Favicons</h2>
+  <p>Shortcut icons are loaded from Google’s public favicon service. When an icon is requested, Google receives the shortcut’s domain name and normal connection information, including your IP address. Mist does not send the shortcut label, your name, or other preferences.</p>
 
-      <h2>Weather</h2>
-      <p>
-        If the optional weather widget is enabled, Mist may use ipapi.co to
-        estimate the user's approximate location from their IP address.
-      </p>
-      <p>
-        Mist then uses Open-Meteo to retrieve weather information for that
-        approximate location.
-      </p>
-      <p>Mist does not request precise browser geolocation permission.</p>
+  <h2>Feedback (optional)</h2>
+  <p>Mist includes an optional form for reporting a bug or suggesting a feature. Opening the form does not send any data. When you select <strong>Send feedback</strong>, Mist sends the feedback type, summary, description, optional contact, extension version, and browser user-agent to a dedicated <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener noreferrer">Netlify</a> function.</p>
+  <p>The function creates a private issue in the developer’s GitHub repository. The submitted content and optional contact are stored in that issue until they are removed by the developer. Netlify and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub</a> also receive normal connection information required to process the request. Mist does not attach your shortcuts, name, themes, search data, or weather data to feedback.</p>
+  <p>Feedback requests are rate-limited and protected with a hidden anti-spam field. Chrome may show a one-time host-access confirmation for the feedback service when you send your first message.</p>
 
-      <h2>Accounts and tracking</h2>
-      <p>Mist does not require an account.</p>
-      <p>Mist does not track browsing history.</p>
-      <p>Mist does not collect analytics.</p>
-      <p>Mist does not sell user data.</p>
-    </main>
-  </body>
+  <h2>Data sharing</h2>
+  <p>Mist shares data only as needed to provide the optional weather, favicon, and user-initiated feedback features described above. It does not use data for advertising, profiling, or analytics.</p>
+  <p>Mist's use of information received from Chrome APIs complies with the Chrome Web Store User Data Policy, including its Limited Use requirements.</p>
+
+  <h2>Your choices and data deletion</h2>
+  <p>You can disable weather at any time to remove its cached location and weather data. You can edit or remove shortcuts and other preferences in Mist. Uninstalling the extension, or clearing Mist's extension data in Chrome, removes all locally stored preferences.</p>
+  <p>Feedback is retained in a private developer issue only as long as needed to investigate the report or suggestion. To request deletion of submitted feedback or optional contact information, email the developer at the address below and include enough information to identify the message. Do not include passwords or other sensitive information in feedback.</p>
+
+  <h2>Security</h2>
+  <p>All data transmitted by Mist to the services described in this policy uses HTTPS.</p>
+
+  <h2>Contact</h2>
+  <p>For privacy questions, deletion requests, or support, visit the <a href="support.html">Mist support page</a> or contact <a href="mailto:aurelien.luxeyy@gmail.com">aurelien.luxeyy@gmail.com</a>.</p>
+</body>
 </html>
